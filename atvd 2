@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  struct dados_aluno
+  {
+    char nome[200];
+    int idade;
+    float nota[2];
+  };
+
+  struct dados_aluno aluno[2];
+  int i, j;
+
+  for (i = 0; i < 2; i++)
+  {
+
+    printf("Digite o nome do aluno: \n");
+    gets(aluno[i].nome);
+
+    printf("Digite a idade do aluno: \n ");
+    scanf("%d", &aluno[i].idade);
+    for (j = 0; j < 2; j++)
+    {
+      printf("Digite a %dº nota do aluno: \n", j + 1);
+      scanf("%f", &aluno[i].nota[j]);
+    }
+
+    printf("\n ------------------------------- \n");
+
+    fflush(stdin);
+  }
+
+  system("cls || clear");
+
+  printf("Exibindo os dados do aluno... \n \n");
+  for (i = 0; i < 2; i++)
+  {
+    printf("--%dº Nome do aluno: %s \n", i + 1, aluno[i].nome);
+    printf("%dº Idade do aluno: %d \n", i + 1, aluno[i].idade);
+    for (j = 0; j < 2; j++)
+    {
+      printf("%dº Nota do Aluno: %.1f \n", j + 1, aluno[i].nota[j]);
+    }
+    printf("\n ------------------------------- \n");
+  }
+
+  return 0;
+}

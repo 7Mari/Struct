@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  struct ficha_aluno
+  {
+    float nota;
+    char nome[200];
+    float media;
+    float soma;
+  };
+
+  struct ficha_aluno aluno[3];
+  int i, j;
+
+  for (i = 0; i < 3; i++)
+  {
+    printf("Digite seu nome: \n");
+    gets(aluno[i].nome);
+
+    for (j = 0; j < 3; j++)
+    {
+      printf("Digite a %dº nota: \n", j + 1);
+      scanf("%f", &aluno[i].nota);
+
+      aluno[i].soma += aluno[i].nota;
+    }
+    fflush(stdin);
+  }
+
+  system("cls || clear");
+
+  printf("\nExibindo dados... \n");
+
+  aluno[i].media = aluno[i].soma / j;
+
+  for (i = 0; i < 3; i++)
+  {
+    printf("%dº Nome: %s\n", i + 1, aluno[i].nome);
+    for (j = 0; j < 3; j++)
+    {
+      printf("%dº Nota: %.1f \n", j + 1, aluno[i].nota);
+    }
+    printf("Média: %.1f \n", aluno[i].media);
+      printf("\n========================================\n");
+
+      if (aluno[i].media >= 7)
+      {
+        printf("Aprovado!");
+      }else if (aluno[i].media >= 5)
+      {
+        printf("Recuperação!");
+      }else {
+        printf("Reprovado!");
+      }
+      
+      
+  }
+
+  return 0;
+}

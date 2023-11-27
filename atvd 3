@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+
+int main(){
+  setlocale(LC_ALL ,"portuguese");
+
+  struct dados_pessoa{
+    char nome[200];
+    int idade;
+    char endereco[200];
+  };
+
+  struct dados_pessoa pessoa[2];
+  int i;
+
+for ( i = 0; i < 2; i++)
+{
+  printf("Informe seu nome: \n");
+  gets(pessoa[i].nome);
+
+  printf("Informe sua idade: \n");
+  scanf("%d" ,&pessoa[i].idade);
+
+  fflush(stdin);
+  printf("Informe seu endereço: \n");
+  gets(pessoa[i].endereco);
+
+  printf("\n =========================== \n");
+
+  fflush(stdin);
+}
+
+system("cls || clear");
+
+printf("\n Exbindo dados... \n");
+for ( i = 0; i < 2; i++)
+{
+  printf("%dº Nome: %s \n" ,i + 1 ,pessoa[i].nome);
+  printf("%dº Idade: %d \n" ,i + 1 ,pessoa[i].idade);
+  printf("%dº Endereço: %s \n" ,i + 1 ,pessoa[i].endereco);
+  printf("\n =========================== \n");
+}
+
+
+
+  return 0;
+}

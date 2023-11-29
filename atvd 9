@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+    struct info_geral
+    {
+        char nome[200];
+        char data[20];
+        char endereco[100];
+        char matricula[20];
+    };
+
+    struct info_geral funcionario[3];
+    struct info_geral cliente[3];
+    int i;
+
+        printf("\t--Pedindo informações do Cliente--\n");
+        for ( i = 0; i < 3; i++)
+        {
+            printf("¬Informe seu nome: \n");
+            gets(cliente[i].nome);
+            printf("-\n");
+
+            fflush(stdin);
+
+            printf("\n¬Informe sua data de nascimento: \n");
+            gets(cliente[i].data);
+            printf("-\n");
+
+            printf("\n¬Informe seu endereço: \n");
+            gets(cliente[i].endereco);
+            printf("-----------------------------\n");
+
+        }
+
+        printf("\n \t--Pedindo informações do Funcionário-- \n"); 
+        
+        for ( i = 0; i < 3; i++)
+        {
+           printf("¬Informe seu nome: \n");
+            gets(funcionario[i].nome);
+            printf("-\n");
+
+            printf("\n¬Informe sua data de admissão: \n");
+            gets(funcionario[i].data);
+            printf("-\n");
+
+            printf("\n¬Informe o número de sua matrícula: \n");
+            gets(funcionario[i].matricula);
+            printf("-\n");
+
+            printf("\n¬Informe seu endereço: \n");
+            gets(funcionario[i].endereco);
+
+            fflush(stdin);
+        
+            printf("-----------------------------\n");
+        }
+        
+        
+        //exibição
+    
+    system("cls || clear");
+
+    printf("\n¨¨Exibindo dados do Cliente...\n");
+
+        for ( i = 0; i < 3; i++)
+        {
+            sleep(2);
+            printf("~~%dº Nome: %s \n" ,i + 1 ,cliente[i].nome);
+            printf("~Data de Nascimento: %s \n" , cliente[i].data);
+            printf("~Endereço: %s \n" ,cliente[i].endereco);
+            printf("¨¨-----------------------------------------¨¨ \n");
+        }
+
+        printf("\n¨¨Exibindo dados do Funcionário...\n");
+
+
+        for ( i = 0; i < 3; i++)
+        {
+            sleep(2);
+            printf("~~%dº Nome: %s \n" , i + 1,funcionario[i].nome);
+            printf("~Data de Admissão: %s \n" , funcionario[i].data);
+            printf("~Número de Matrícula: %s \n" , funcionario[i].matricula);
+            printf("~Endereço: %s \n" ,funcionario[i].endereco);
+            printf("¨¨-----------------------------------------¨¨ \n");
+        }
+        
+               
+    
+  return 0;
+}

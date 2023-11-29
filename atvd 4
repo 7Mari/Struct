@@ -30,26 +30,25 @@ int main()
 
       aluno[i].soma += aluno[i].nota;
     }
-    fflush(stdin);
+      aluno[i].media = aluno[i].soma / j;
+      fflush(stdin);
   }
 
   system("cls || clear");
 
   printf("\nExibindo dados... \n");
 
-  aluno[i].media = aluno[i].soma / j;
 
   for (i = 0; i < 3; i++)
   {
-    printf("%dº Nome: %s\n", i + 1, aluno[i].nome);
+    printf("\n%dº Nome: %s\n", i + 1, aluno[i].nome);
     for (j = 0; j < 3; j++)
     {
       printf("%dº Nota: %.1f \n", j + 1, aluno[i].nota);
     }
     printf("Média: %.1f \n", aluno[i].media);
-      printf("\n========================================\n");
 
-      if (aluno[i].media >= 7)
+    if (aluno[i].media >= 7)
       {
         printf("Aprovado!");
       }else if (aluno[i].media >= 5)
@@ -58,8 +57,8 @@ int main()
       }else {
         printf("Reprovado!");
       }
-      
-      
+    printf("\n========================================\n");
+    
   }
 
   return 0;

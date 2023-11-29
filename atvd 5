@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+  struct livros_info
+  {
+    char nome[200];
+    char autor[200];
+    char categoria[200];
+    float preco;
+  };
+
+  struct livros_info livros[3];
+  int i;
+
+    for ( i = 0; i < 3; i++)
+    {
+        printf("Informe o nome do livro: \n");
+        gets(livros[i].nome);
+
+        printf("\nInforme o nome do autor: \n");
+        gets(livros[i].autor);
+
+        printf("\nEscolha a categoria do livro: \n");
+        gets(livros[i].categoria);
+
+        printf("\nInforme o preço do livro: \n");
+        scanf("%f" ,&livros[i].preco);
+
+        printf("\n°________________°________________°\n");
+
+        fflush(stdin);
+    }
+    
+  system("cls || clear");
+
+  printf("~~Exibindo informações dos livros escolhidos...\n");
+
+    for ( i = 0; i < 3; i++)
+    {
+        printf("\n~°Nome do %dº Livro°~: %s \n" , i + 1 ,livros[i].nome);
+        printf("\n~°Autor do %dº Livro°~: %s \n" , i + 1 ,livros[i].autor);
+        printf("\n~°Categoria do %dº Livro°~: %s \n" , i + 1 ,livros[i].categoria);
+        printf("\n~°Preço do %dº Livro°~: R$%.2f \n" , i + 1 ,livros[i].preco);
+        printf("\n°________________°________________°\n");
+    }
+    
+  return 0;
+}

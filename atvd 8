@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+  setlocale(LC_ALL, "portuguese");
+
+    struct info_geral
+    {
+        char nome[200];
+        char cpf[20];
+        int idade;
+    };
+
+    struct info_geral funcionario;
+    struct info_geral cliente;
+
+        printf("\t--Pedindo informações do cliente--\n");
+        
+        printf("¬Informe seu nome: \n");
+        gets(cliente.nome);
+        printf("-\n");
+
+        printf("\n¬Informe sua idade: \n");
+        scanf("%d" ,&cliente.idade);
+        printf("-\n");
+
+        fflush(stdin);
+
+        printf("\n¬Informe seu CPF: \n");
+        gets(cliente.cpf);
+        printf("-----------------------------\n");
+
+        
+        
+
+        printf("\n \t--Pedindo informações do Funcionário-- \n");
+
+        
+        printf("¬Informe seu nome: \n");
+        gets(funcionario.nome);
+        printf("-\n");
+
+        printf("\n¬Informe sua idade: \n");
+        scanf("%d" ,&funcionario.idade);
+        printf("-\n");
+
+        fflush(stdin);
+        
+        printf("\n¬Informe seu CPF: \n");
+        gets(funcionario.cpf);
+        printf("-----------------------------\n");
+
+        
+    
+    system("cls || clear");
+
+    printf("¨¨Exibindo dados do cliente...\n");
+
+            sleep(2);
+        printf("~~Nome: %s \n" ,cliente.nome);
+        printf("~Idade: %d \n" ,cliente.idade);
+        printf("~CPF: %s \n" , cliente.cpf);
+        printf("¨¨-----------------------------------------¨¨ \n");
+        
+
+
+        printf("¨¨Exibindo dados do Funcionário...\n");
+
+        sleep(2);
+        printf("~~Nome: %s \n" ,funcionario.nome);
+        printf("~Idade: %d \n" ,funcionario.idade);
+        printf("~CPF: %s \n" , funcionario.cpf);
+        printf("¨¨-----------------------------------------¨¨ \n");
+
+        
+    
+  return 0;
+}
